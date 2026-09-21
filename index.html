@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Barbearia Stillus Men - Cortes, barba e cuidados masculinos."
+    >
+
+    <title>Stillus Men | Barbearia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+
+            <a href="#inicio" class="logo">
+                <span class="logo-mark">S</span>
+                <span>STILLUS<span class="yellow"> MEN</span></span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="nav">
+                <ul>
+                    <li>
+                        <a href="#inicio" class="nav-link active">Início</a>
+                    </li>
+
+                    <li>
+                        <a href="#servicos" class="nav-link">Serviços</a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre" class="nav-link">Sobre</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato" class="nav-link">Contato</a>
+                    </li>
+                </ul>
+
+                <a href="#agendamento" class="button header-button">
+                    Agendar horário
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-container">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    <span></span>
+                    BARBEARIA PREMIUM
+                </span>
+
+                <h1>
+                    Seu estilo.
+                    <strong>Sua presença.</strong>
+                </h1>
+
+                <p>
+                    Cortes, barba e cuidados masculinos
+                    para quem gosta de chegar com estilo.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#agendamento" class="button">
+                        Agendar horário
+                    </a>
+
+                    <a href="#servicos" class="button button-outline">
+                        Ver serviços
+                    </a>
+                </div>
+
+                <div class="hero-info">
+
+                    <div>
+                        <strong>+500</strong>
+                        <span>Clientes</span>
+                    </div>
+
+                    <div>
+                        <strong>5★</strong>
+                        <span>Avaliação</span>
+                    </div>
+
+                    <div>
+                        <strong>10+</strong>
+                        <span>Serviços</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <div class="yellow-circle"></div>
+
+                <div class="hero-photo">
+                    <img
+                        src="assets/images/hero.jpg"
+                        alt="Barbeiro realizando um corte masculino"
+                    >
+                </div>
+
+                <div class="hero-badge">
+                    <span>ESTILO</span>
+                    <strong>SEM<br>LIMITES</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+    <section class="search-section">
+
+        <div class="container">
+
+            <div class="search-title">
+                <span>ENCONTRE O QUE PROCURA</span>
+
+                <h2>
+                    Escolha seu
+                    <strong>serviço</strong>
+                </h2>
+            </div>
+
+            <div class="search-area">
+
+                <div class="search-box">
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Pesquisar serviço..."
+                    >
+                </div>
+
+                <select id="categoryFilter">
+                    <option value="todos">Todos os serviços</option>
+                    <option value="cabelo">Cabelo</option>
+                    <option value="barba">Barba</option>
+                    <option value="combo">Combos</option>
+                    <option value="acabamento">Acabamento</option>
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVIÇOS -->
+    <main id="servicos">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">NOSSOS SERVIÇOS</span>
+
+                    <h2>
+                        Feito para o
+                        <strong>seu estilo.</strong>
+                    </h2>
+                </div>
+
+                <p>
+                    Escolha o serviço que combina com você
+                    e deixe o resto com a gente.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid" id="servicesGrid">
+
+                <!-- CARD 1 -->
+                <article
+                    class="service-card"
+                    data-category="cabelo"
+                    data-name="corte masculino"
+                >
+
+                    <div class="service-image">
+                        <img
+                            src="assets/images/corte.jpg"
+                            alt="Corte masculino"
+                        >
+
+                        <span class="service-tag">
+                            MAIS PEDIDO
+                        </span>
+                    </div>
+
+                    <div class="service-info">
+
+                        <span class="service-category">
+                            CABELO
+                        </span>
+
+                        <h3>Corte Masculino</h3>
+
+                        <p>
+                            Corte personalizado de acordo
+                            com seu estilo.
+                        </p>
+
+                        <div class="service-bottom">
+                            <strong>R$ 35,00</strong>
+
+                            <a href="#agendamento" class="service-button">
+                                Agendar
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2 -->
+                <article
+                    class="service-card"
+                    data-category="barba"
+                    data-name="barba"
+                >
+
+                    <div class="service-image">
+                        <img
+                            src="assets/images/barba.jpg"
+                            alt="Barba masculina"
+                        >
+                    </div>
+
+                    <div class="service-info">
+
+                        <span class="service-category">
+                            BARBA
+                        </span>
+
+                        <h3>Barba</h3>
+
+                        <p>
+                            Modelagem e acabamento
+                            para deixar sua barba alinhada.
+                        </p>
+
+                        <div class="service-bottom">
+                            <strong>R$ 25,00</strong>
+
+                            <a href="#agendamento" class="service-button">
+                                Agendar
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+                <article
+                    class="service-card"
+                    data-category="cabelo"
+                    data-name="degrade"
+                >
+
+                    <div class="service-image">
+                        <img
+                            src="assets/images/degrade.jpg"
+                            alt="Corte degradê"
+                        >
+                    </div>
+
+                    <div class="service-info">
+
+                        <span class="service-category">
+                            CABELO
+                        </span>
+
+                        <h3>Degradê</h3>
+
+                        <p>
+                            Degradê com acabamento preciso
+                            e personalizado.
+                        </p>
+
+                        <div class="service-bottom">
+                            <strong>R$ 40,00</strong>
+
+                            <a href="#agendamento" class="service-button">
+                                Agendar
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 4 -->
+                <article
+                    class="service-card"
+                    data-category="combo"
+                    data-name="corte barba"
+                >
+
+                    <div class="service-image">
+                        <img
+                            src="assets/images/combo.jpg"
+                            alt="Corte e barba"
+                        >
+
+                        <span class="service-tag">
+                            COMBO
+                        </span>
+                    </div>
+
+                    <div class="service-info">
+
+                        <span class="service-category">
+                            COMBO
+                        </span>
+
+                        <h3>Corte + Barba</h3>
+
+                        <p>
+                            O combo completo para sair
+                            com o visual renovado.
+                        </p>
+
+                        <div class="service-bottom">
+                            <strong>R$ 55,00</strong>
+
+                            <a href="#agendamento" class="service-button">
+                                Agendar
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 5 -->
+                <article
+                    class="service-card"
+                    data-category="acabamento"
+                    data-name="sobrancelha"
+                >
+
+                    <div class="service-image">
+                        <img
+                            src="assets/images/sobrancelha.jpg"
+                            alt="Design de sobrancelha masculina"
+                        >
+                    </div>
+
+                    <div class="service-info">
+
+                        <span class="service-category">
+                            ACABAMENTO
+                        </span>
+
+                        <h3>Sobrancelha</h3>
+
+                        <p>
+                            Design e limpeza para completar
+                            seu visual.
+                        </p>
+
+                        <div class="service-bottom">
+                            <strong>R$ 15,00</strong>
+
+                            <a href="#agendamento" class="service-button">
+                                Agendar
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 6 -->
+                <article
+                    class="service-card"
+                    data-category="combo"
+                    data-name="corte barba sobrancelha"
+                >
+
+                    <div class="service-image">
+                        <img
+                            src="assets/images/acabamento.jpg"
+                            alt="Combo completo masculino"
+                        >
+
+                        <span class="service-tag">
+                            COMPLETO
+                        </span>
+                    </div>
+
+                    <div class="service-info">
+
+                        <span class="service-category">
+                            COMBO
+                        </span>
+
+                        <h3>Combo Completo</h3>
+
+                        <p>
+                            Corte, barba e sobrancelha
+                            em uma única experiência.
+                        </p>
+
+                        <div class="service-bottom">
+                            <strong>R$ 65,00</strong>
+
+                            <a href="#agendamento" class="service-button">
+                                Agendar
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="no-results" id="noResults">
+                <span>✂</span>
+                <h3>Nenhum serviço encontrado</h3>
+                <p>Experimente outra busca ou categoria.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- SOBRE -->
+    <section class="about" id="sobre">
+
+        <div class="container about-container">
+
+            <div class="about-image">
+
+                <div class="about-photo">
+                    <img
+                        src="assets/images/hero.jpg"
+                        alt="Interior da barbearia"
+                    >
+                </div>
+
+                <div class="about-number">
+                    <strong>10+</strong>
+                    <span>ANOS DE<br>EXPERIÊNCIA</span>
+                </div>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <span class="section-label">
+                    SOBRE A STILLUS MEN
+                </span>
+
+                <h2>
+                    Mais que um corte.
+                    <strong>Uma experiência.</strong>
+                </h2>
+
+                <p>
+                    Na Stillus Men, cada detalhe foi pensado para
+                    proporcionar uma experiência completa.
+                </p>
+
+                <p>
+                    Unimos técnicas modernas, atendimento de qualidade
+                    e um ambiente confortável para você sair daqui
+                    com o visual em dia.
+                </p>
+
+                <div class="about-list">
+
+                    <div>
+                        <span>✓</span>
+                        <p>Profissionais especializados</p>
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        <p>Ambiente moderno e confortável</p>
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        <p>Produtos de qualidade</p>
+                    </div>
+
+                </div>
+
+                <a href="#agendamento" class="button">
+                    Conheça nossos serviços
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA / AGENDAMENTO -->
+    <section class="booking" id="agendamento">
+
+        <div class="container booking-container">
+
+            <div>
+
+                <span class="section-label">
+                    SEU PRÓXIMO CORTE
+                </span>
+
+                <h2>
+                    Pronto para
+                    <strong>mudar o visual?</strong>
+                </h2>
+
+                <p>
+                    Escolha seu horário e venha viver
+                    a experiência Stillus Men.
+                </p>
+
+            </div>
+
+            <a href="https://wa.me/5500000000000" class="button booking-button">
+                Agendar pelo WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="contato">
+
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#inicio" class="logo">
+                    <span class="logo-mark">S</span>
+                    <span>STILLUS<span class="yellow"> MEN</span></span>
+                </a>
+
+                <p>
+                    Seu estilo começa aqui.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Links</h3>
+
+                <a href="#inicio">Início</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#agendamento">Agendamento</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contato</h3>
+
+                <a href="tel:+5500000000000">
+                    (00) 00000-0000
+                </a>
+
+                <a href="#">
+                    Rua da Barbearia, 100
+                </a>
+
+                <span>
+                    Segunda a sábado
+                </span>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Redes sociais</h3>
+
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">WhatsApp</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <span>
+                    © 2026 Stillus Men. Todos os direitos reservados.
+                </span>
+
+                <span>
+                    Desenvolvido por Tiago
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
