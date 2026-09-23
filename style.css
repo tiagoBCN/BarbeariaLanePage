@@ -1,7 +1,31 @@
+/* =================================
+   VARIÁVEIS
+================================= */
 
-/* =========================================================
+:root {
+
+    --black: #0b0b0b;
+    --dark: #111111;
+    --dark-gray: #181818;
+
+    --gray: #777777;
+    --light-gray: #b8b8b8;
+
+    --white: #ffffff;
+    --off-white: #f4f4f4;
+
+    --border: #282828;
+
+    --radius: 12px;
+
+    --container: 1180px;
+
+}
+
+
+/* =================================
    RESET
-========================================================= */
+================================= */
 
 * {
     margin: 0;
@@ -9,1276 +33,1190 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    font-family: "Montserrat", Arial, sans-serif;
-    background: #ffffff;
-    color: #111111;
-    overflow-x: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    line-height: 1.5;
+
 }
+
 
 a {
     color: inherit;
     text-decoration: none;
 }
 
+
 button,
-input,
-select {
+input {
     font: inherit;
 }
 
-img {
-    width: 100%;
-    display: block;
-}
+
+/* =================================
+   CONTAINER
+================================= */
 
 .container {
-    width: min(1180px, calc(100% - 40px));
-    margin: 0 auto;
+
+    width: min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin: auto;
+
 }
 
 
-/* =========================================================
-   CORES
-========================================================= */
-
-:root {
-    --black: #0a0a0a;
-    --black-light: #151515;
-    --black-card: #1c1c1c;
-
-    --yellow: #e6c65c;
-    --yellow-dark: #c9a83e;
-
-    --white: #ffffff;
-    --gray: #a5a5a5;
-    --border: #292929;
-}
-
-
-/* =========================================================
-   UTILITÁRIOS
-========================================================= */
-
-.yellow {
-    color: var(--yellow);
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    padding: 15px 27px;
-
-    background: var(--yellow);
-    color: var(--black);
-
-    font-size: 13px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-
-    border: 2px solid var(--yellow);
-
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        color .25s ease;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    background: var(--white);
-    border-color: var(--white);
-}
-
-.button-outline {
-    background: transparent;
-    color: var(--white);
-    border-color: var(--white);
-}
-
-.button-outline:hover {
-    background: var(--yellow);
-    border-color: var(--yellow);
-    color: var(--black);
-}
-
-
-/* =========================================================
+/* =================================
    HEADER
-========================================================= */
+================================= */
 
 .header {
-    position: absolute;
+
+    position: sticky;
+
     top: 0;
-    left: 0;
-    right: 0;
 
     z-index: 100;
 
-    padding: 25px 0;
+    background:
+        rgba(11, 11, 11, 0.92);
 
-    background: rgba(10, 10, 10, .15);
+    backdrop-filter:
+        blur(12px);
+
+    border-bottom:
+        1px solid var(--border);
+
 }
 
-.header-container {
+
+.header-content {
+
+    min-height: 72px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
+    gap: 30px;
+
 }
+
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
 
-    color: var(--white);
+    font-size: 18px;
 
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.logo-mark {
-    width: 36px;
-    height: 36px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: var(--yellow);
-    color: var(--black);
-
-    font-size: 21px;
     font-weight: 900;
 
-    transform: skew(-8deg);
+    letter-spacing: 2px;
+
 }
+
 
 .nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.nav ul {
-    list-style: none;
 
     display: flex;
-    align-items: center;
+
     gap: 30px;
+
 }
 
-.nav-link {
-    position: relative;
 
-    color: #dddddd;
+.nav a {
 
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .7px;
+    color: var(--light-gray);
 
-    transition: color .25s ease;
+    font-size: 14px;
+
+    transition: 0.2s;
+
 }
 
-.nav-link::after {
-    content: "";
 
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--yellow);
-
-    transition: width .25s ease;
+.nav a:hover {
+    color: var(--white);
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--yellow);
-}
 
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
-}
+/* =================================
+   BOTÕES
+================================= */
 
-.header-button {
-    padding: 12px 20px;
-}
+.btn {
 
-.menu-toggle {
-    display: none;
+    display: inline-flex;
 
-    width: 42px;
-    height: 42px;
+    align-items: center;
 
-    border: 1px solid var(--border);
-    background: var(--black-light);
+    justify-content: center;
 
-    cursor: pointer;
-}
+    min-height: 52px;
 
-.menu-toggle span {
-    display: block;
-
-    width: 21px;
-    height: 2px;
-
-    margin: 4px auto;
+    padding:
+        0 24px;
 
     background: var(--white);
 
-    transition: .25s;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    position: relative;
-
-    min-height: 720px;
-
-    display: flex;
-    align-items: center;
-
-    background:
-        radial-gradient(
-            circle at 75% 40%,
-            rgba(255, 208, 0, .10),
-            transparent 30%
-        ),
-        var(--black);
-
-    overflow: hidden;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(10, 10, 10, .95) 0%,
-            rgba(10, 10, 10, .72) 48%,
-            rgba(10, 10, 10, .2) 100%
-        );
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    gap: 40px;
-}
-
-.hero-content {
-    padding-top: 70px;
-}
-
-.hero-label,
-.section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    color: var(--yellow);
-
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.hero-label span {
-    width: 30px;
-    height: 2px;
-
-    background: var(--yellow);
-}
-
-.hero h1 {
-    max-width: 650px;
-
-    margin: 22px 0;
-
-    color: var(--white);
-
-    font-size: clamp(48px, 6vw, 76px);
-    line-height: .98;
-    font-weight: 900;
-
-    text-transform: uppercase;
-    letter-spacing: -3px;
-}
-
-.hero h1 strong {
-    display: block;
-    color: var(--yellow);
-}
-
-.hero-content > p {
-    max-width: 500px;
-
-    margin-bottom: 32px;
-
-    color: #c8c8c8;
-
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.hero-info {
-    display: flex;
-    gap: 45px;
-
-    margin-top: 55px;
-}
-
-.hero-info div {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.hero-info strong {
-    color: var(--white);
-
-    font-size: 24px;
-    font-weight: 900;
-}
-
-.hero-info span {
-    color: var(--gray);
-
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.hero-image {
-    position: relative;
-
-    min-height: 600px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.yellow-circle {
-    position: absolute;
-
-    width: 470px;
-    height: 470px;
-
-    border-radius: 50%;
-
-    background: var(--yellow);
-
-    opacity: .95;
-}
-
-.hero-photo {
-    position: relative;
-    z-index: 2;
-
-    width: 390px;
-    height: 520px;
-
-    overflow: hidden;
-
-    border: 8px solid var(--black);
-
-    box-shadow: 0 25px 60px rgba(0, 0, 0, .5);
-
-    background: var(--black-light);
-}
-
-.hero-photo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.hero-badge {
-    position: absolute;
-    z-index: 3;
-
-    right: 20px;
-    bottom: 75px;
-
-    width: 145px;
-    height: 145px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 20px;
-
-    background: var(--black);
-    color: var(--white);
-
-    border: 2px solid var(--yellow);
-
-    transform: rotate(-8deg);
-}
-
-.hero-badge span {
-    color: var(--yellow);
-
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.hero-badge strong {
-    margin-top: 8px;
-
-    font-size: 19px;
-    line-height: 1.1;
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.search-section {
-    padding: 70px 0;
-
-    background: var(--yellow);
-}
-
-.search-section .container {
-    display: grid;
-    grid-template-columns: .7fr 1.3fr;
-
-    align-items: end;
-
-    gap: 50px;
-}
-
-.search-title > span {
     color: var(--black);
 
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 2px;
+    border: 1px solid var(--white);
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
 }
 
-.search-title h2 {
-    margin-top: 10px;
 
-    font-size: 34px;
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-.search-title h2 strong {
-    display: block;
-    font-weight: 900;
-}
-
-.search-area {
-    display: grid;
-    grid-template-columns: 1fr 220px;
-
-    gap: 12px;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-
-    background: var(--white);
-    border: 2px solid var(--black);
-}
-
-.search-box span {
-    padding-left: 17px;
-
-    font-size: 27px;
-    font-weight: 900;
-}
-
-.search-box input {
-    width: 100%;
-
-    padding: 17px;
-
-    border: 0;
-    outline: none;
+.btn:hover {
 
     background: transparent;
 
-    color: var(--black);
-
-    font-size: 13px;
-}
-
-.search-box input::placeholder {
-    color: #777;
-}
-
-.search-area select {
-    padding: 0 15px;
-
-    border: 2px solid var(--black);
-    outline: none;
-
-    background: var(--black);
     color: var(--white);
 
-    font-size: 12px;
-    font-weight: 700;
-
-    cursor: pointer;
 }
 
 
-/* =========================================================
-   SERVIÇOS
-========================================================= */
+.btn-small {
 
-main {
-    padding: 100px 0;
-    background: var(--white);
+    min-height: 42px;
+
+    padding:
+        0 18px;
+
+    font-size: 14px;
+
 }
 
-.section-heading {
+
+.btn-outline {
+
+    background: transparent;
+
+    color: var(--white);
+
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+
+    min-height:
+        calc(100vh - 72px);
+
     display: flex;
-    align-items: end;
-    justify-content: space-between;
 
-    margin-bottom: 50px;
+    align-items: center;
+
+    border-bottom:
+        1px solid var(--border);
+
 }
 
-.section-heading h2,
-.about-content h2,
-.booking h2 {
-    margin-top: 12px;
 
-    font-size: clamp(34px, 4vw, 50px);
-    line-height: 1.05;
+.hero-content {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr 0.7fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    padding:
+        100px 0;
+
+}
+
+
+.hero-tag,
+.section-label {
+
+    display: inline-block;
+
+    color: var(--light-gray);
+
+    font-size: 12px;
+
     font-weight: 800;
 
-    text-transform: uppercase;
-    letter-spacing: -1px;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
 }
 
-.section-heading h2 strong,
-.about-content h2 strong,
-.booking h2 strong {
-    color: var(--yellow-dark);
+
+.hero h1 {
+
+    font-size:
+        clamp(56px, 8vw, 100px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+
 }
 
-.section-heading > p {
-    max-width: 350px;
 
-    color: #666;
+.hero p {
 
-    font-size: 13px;
-    line-height: 1.7;
-    text-align: right;
+    max-width: 520px;
+
+    color: var(--light-gray);
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+
 }
+
+
+.hero-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+}
+
+
+.hero-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+.info-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+}
+
+
+.info-icon {
+
+    font-size: 22px;
+
+}
+
+
+.info-item strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+}
+
+
+.info-item span:last-child {
+
+    display: block;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+}
+
+
+/* =================================
+   SEÇÕES
+================================= */
+
+.section {
+
+    padding:
+        110px 0;
+
+}
+
+
+.section-header {
+
+    max-width: 650px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.section-header h2 {
+
+    font-size:
+        clamp(38px, 5vw, 64px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.section-header p {
+
+    color: var(--gray);
+
+    font-size: 17px;
+
+}
+
+
+/* =================================
+   SERVIÇOS
+================================= */
 
 .services-grid {
+
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 25px;
-}
-
-.service-card {
-    overflow: hidden;
-
-    background: var(--black);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, .18);
-}
-
-.service-image {
-    position: relative;
-
-    height: 250px;
-
-    overflow: hidden;
-
-    background: var(--black-light);
-}
-
-.service-image img {
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: transform .5s ease;
-}
-
-.service-card:hover .service-image img {
-    transform: scale(1.06);
-}
-
-.service-tag {
-    position: absolute;
-
-    top: 15px;
-    left: 15px;
-
-    padding: 7px 10px;
-
-    background: var(--yellow);
-    color: var(--black);
-
-    font-size: 9px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.service-info {
-    padding: 25px;
-}
-
-.service-category {
-    color: var(--yellow);
-
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-}
-
-.service-info h3 {
-    margin: 8px 0;
-
-    color: var(--white);
-
-    font-size: 21px;
-    font-weight: 800;
-}
-
-.service-info > p {
-    min-height: 45px;
-
-    color: #999;
-
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.service-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-top: 25px;
-
-    padding-top: 18px;
-
-    border-top: 1px solid var(--border);
-}
-
-.service-bottom strong {
-    color: var(--yellow);
-
-    font-size: 20px;
-}
-
-.service-button {
-    padding: 9px 13px;
-
-    background: var(--yellow);
-    color: var(--black);
-
-    font-size: 9px;
-    font-weight: 900;
-    text-transform: uppercase;
-
-    transition: .25s;
-}
-
-.service-button:hover {
-    background: var(--white);
-}
-
-.no-results {
-    display: none;
-
-    padding: 70px 20px;
-
-    text-align: center;
-}
-
-.no-results span {
-    display: block;
-
-    margin-bottom: 15px;
-
-    font-size: 40px;
-}
-
-.no-results h3 {
-    font-size: 22px;
-}
-
-.no-results p {
-    margin-top: 8px;
-
-    color: #777;
-}
-
-
-/* =========================================================
-   SOBRE
-========================================================= */
-
-.about {
-    padding: 110px 0;
-
-    background: var(--black);
-    color: var(--white);
-}
-
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    gap: 90px;
-}
-
-.about-image {
-    position: relative;
-
-    min-height: 530px;
-}
-
-.about-photo {
-    width: 85%;
-    height: 500px;
-
-    overflow: hidden;
-
-    border: 1px solid #333;
-
-    background: var(--black-light);
-}
-
-.about-photo img {
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-number {
-    position: absolute;
-
-    right: 0;
-    bottom: 0;
-
-    width: 190px;
-    height: 190px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 25px;
-
-    background: var(--yellow);
-    color: var(--black);
-}
-
-.about-number strong {
-    font-size: 46px;
-    line-height: 1;
-    font-weight: 900;
-}
-
-.about-number span {
-    margin-top: 10px;
-
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.about-content h2 {
-    color: var(--white);
-}
-
-.about-content > p {
-    max-width: 500px;
-
-    margin-top: 22px;
-
-    color: #aaa;
-
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.about-list {
-    display: flex;
-    flex-direction: column;
     gap: 15px;
 
-    margin: 30px 0;
 }
 
-.about-list div {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
 
-.about-list span {
-    width: 25px;
-    height: 25px;
+.service-card {
+
+    padding: 30px;
+
+    min-height: 300px;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
 
-    background: var(--yellow);
-    color: var(--black);
+    flex-direction: column;
 
-    font-size: 12px;
-    font-weight: 900;
-}
+    border:
+        1px solid var(--border);
 
-.about-list p {
-    color: #ddd;
+    border-radius: var(--radius);
 
-    font-size: 12px;
-    font-weight: 600;
+    transition: 0.25s;
+
 }
 
 
-/* =========================================================
-   BOOKING
-========================================================= */
+.service-card:hover {
 
-.booking {
-    padding: 80px 0;
+    background: var(--dark);
 
-    background: var(--yellow);
+    transform:
+        translateY(-4px);
+
 }
 
-.booking-container {
+
+.service-number {
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    margin-bottom: auto;
+
+}
+
+
+.service-card h3 {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.service-card p {
+
+    color: var(--gray);
+
+    margin-bottom: 30px;
+
+}
+
+
+.service-footer {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    gap: 40px;
+    padding-top: 20px;
+
+    border-top:
+        1px solid var(--border);
+
 }
 
-.booking h2 {
-    max-width: 700px;
 
-    margin-top: 12px;
-}
+.service-footer span {
 
-.booking h2 strong {
-    display: block;
-
-    color: var(--black);
-}
-
-.booking p {
-    margin-top: 15px;
-
-    color: #333;
+    color: var(--gray);
 
     font-size: 14px;
+
 }
+
+
+/* =================================
+   AGENDAMENTO
+================================= */
+
+.booking-section {
+
+    background: var(--dark);
+
+}
+
+
+.booking-box {
+
+    max-width: 850px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 30px;
+
+}
+
+
+.booking-step {
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    gap: 20px;
+
+    padding:
+        30px 0;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.step-number {
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+}
+
+
+.step-content h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.service-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.service-option {
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    background: transparent;
+
+    color: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.service-option strong {
+
+    color: var(--light-gray);
+
+    font-size: 14px;
+
+}
+
+
+.service-option.active {
+
+    background: var(--white);
+
+    color: var(--black);
+
+    border-color:
+        var(--white);
+
+}
+
+
+.service-option.active strong {
+
+    color: var(--black);
+
+}
+
+
+/* =================================
+   DATAS
+================================= */
+
+.date-options {
+
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 5px;
+
+}
+
+
+.date-option {
+
+    min-width: 75px;
+
+    padding: 15px 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    align-items: center;
+
+    background: transparent;
+
+    color: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.date-option span {
+
+    font-size: 11px;
+
+    color: var(--gray);
+
+}
+
+
+.date-option.active {
+
+    background: var(--white);
+
+    color: var(--black);
+
+}
+
+
+.date-option.active span {
+
+    color: var(--gray);
+
+}
+
+
+/* =================================
+   HORÁRIOS
+================================= */
+
+.time-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.time-option {
+
+    min-height: 48px;
+
+    background: transparent;
+
+    color: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.time-option:hover,
+.time-option.active {
+
+    background: var(--white);
+
+    color: var(--black);
+
+}
+
+
+.time-option.disabled {
+
+    color: #444;
+
+    border-color: #222;
+
+    cursor: not-allowed;
+
+    text-decoration:
+        line-through;
+
+}
+
+
+/* =================================
+   FORMULÁRIO
+================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.input-group label {
+
+    color: var(--light-gray);
+
+    font-size: 13px;
+
+}
+
+
+.input-group input {
+
+    height: 50px;
+
+    padding:
+        0 15px;
+
+    background:
+        var(--black);
+
+    color: var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+}
+
+
+.input-group input:focus {
+
+    border-color:
+        var(--white);
+
+}
+
 
 .booking-button {
-    flex-shrink: 0;
 
-    background: var(--black);
-    border-color: var(--black);
-    color: var(--white);
-}
+    width: 100%;
 
-.booking-button:hover {
-    background: var(--white);
-    border-color: var(--white);
-    color: var(--black);
+    margin-top: 30px;
+
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* =================================
+   ATENDIMENTO
+================================= */
 
-footer {
-    background: var(--black);
-    color: var(--white);
+.arrival-section {
+
+    padding:
+        70px 0;
+
 }
 
-.footer-container {
-    display: grid;
-    grid-template-columns: 1.5fr repeat(3, 1fr);
 
-    gap: 50px;
+.arrival-box {
 
-    padding: 70px 0;
-}
-
-.footer-brand p {
-    margin-top: 20px;
-
-    color: #888;
-
-    font-size: 12px;
-}
-
-.footer-column {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
 
-.footer-column h3 {
-    margin-bottom: 8px;
+    align-items: center;
 
-    color: var(--yellow);
-
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.footer-column a,
-.footer-column span {
-    color: #999;
-
-    font-size: 11px;
-
-    transition: color .2s;
-}
-
-.footer-column a:hover {
-    color: var(--yellow);
-}
-
-.footer-bottom {
-    padding: 20px 0;
-
-    border-top: 1px solid var(--border);
-}
-
-.footer-bottom .container {
-    display: flex;
     justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 50px;
+
+    background: var(--white);
+
+    color: var(--black);
+
+    border-radius: var(--radius);
+
+}
+
+
+.arrival-box .section-label {
 
     color: #666;
 
-    font-size: 10px;
 }
 
 
-/* =========================================================
+.arrival-box h2 {
+
+    font-size:
+        clamp(38px, 5vw, 60px);
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+
+}
+
+
+.arrival-box p {
+
+    color: #555;
+
+}
+
+
+.arrival-icon {
+
+    font-size: 60px;
+
+}
+
+
+/* =================================
+   LOCALIZAÇÃO
+================================= */
+
+.location-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+}
+
+
+.location-grid h2 {
+
+    font-size:
+        clamp(40px, 5vw, 64px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+
+}
+
+
+.location-grid p {
+
+    color: var(--gray);
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.hours {
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.hours h3 {
+
+    padding:
+        25px 0;
+
+    font-size: 20px;
+
+}
+
+
+.hours-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        18px 0;
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.hours-row span {
+
+    color: var(--gray);
+
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.footer-content {
+
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.footer-content span {
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+}
+
+
+/* =================================
    RESPONSIVIDADE
-========================================================= */
+================================= */
 
-@media (max-width: 1000px) {
-
-    .hero {
-        min-height: auto;
-        padding: 130px 0 80px;
-    }
-
-    .hero-container {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-content {
-        padding-top: 0;
-    }
-
-    .hero-image {
-        min-height: 520px;
-    }
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about-container {
-        gap: 50px;
-    }
-
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 760px) {
-
-    .container {
-        width: min(100% - 30px, 600px);
-    }
-
-
-    /* HEADER */
-
-    .header {
-        padding: 18px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: relative;
-        z-index: 110;
-    }
+@media (max-width: 850px) {
 
     .nav {
-        position: fixed;
-
-        top: 0;
-        right: -100%;
-
-        width: 80%;
-        max-width: 340px;
-        height: 100vh;
-
-        padding: 100px 30px 30px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-
-        background: var(--black);
-
-        transition: right .3s ease;
-    }
-
-    .nav.open {
-        right: 0;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 25px;
-    }
-
-    .nav-link {
-        font-size: 14px;
-    }
-
-    .header-button {
-        margin-top: 20px;
+        display: none;
     }
 
 
-    /* HERO */
+    .hero-content {
 
-    .hero {
-        padding-top: 120px;
-    }
-
-    .hero h1 {
-        font-size: clamp(42px, 13vw, 65px);
-    }
-
-    .hero-image {
-        min-height: 430px;
-    }
-
-    .yellow-circle {
-        width: 330px;
-        height: 330px;
-    }
-
-    .hero-photo {
-        width: 290px;
-        height: 390px;
-    }
-
-    .hero-badge {
-        right: 0;
-        bottom: 35px;
-
-        width: 115px;
-        height: 115px;
-    }
-
-    .hero-info {
-        gap: 25px;
-    }
-
-
-    /* SEARCH */
-
-    .search-section .container {
         grid-template-columns: 1fr;
-        gap: 25px;
+
+        gap: 60px;
+
+        padding:
+            80px 0;
+
     }
 
-    .search-area {
-        grid-template-columns: 1fr;
-    }
-
-    .search-area select {
-        height: 52px;
-    }
-
-
-    /* SERVICES */
-
-    main {
-        padding: 70px 0;
-    }
-
-    .section-heading {
-        display: block;
-    }
-
-    .section-heading > p {
-        margin-top: 20px;
-        text-align: left;
-    }
 
     .services-grid {
+
         grid-template-columns: 1fr;
+
     }
 
 
-    /* ABOUT */
+    .location-grid {
 
-    .about {
-        padding: 75px 0;
-    }
-
-    .about-container {
         grid-template-columns: 1fr;
-    }
 
-    .about-image {
-        min-height: 420px;
-    }
+        gap: 60px;
 
-    .about-photo {
-        height: 400px;
-        width: 90%;
-    }
-
-
-    /* BOOKING */
-
-    .booking-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .booking-button {
-        width: 100%;
-    }
-
-
-    /* FOOTER */
-
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
     }
 
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+
+    .container {
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    .header-content {
+
+        min-height: 64px;
+
+    }
+
+
+    .header .btn-small {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        min-height:
+            calc(100vh - 64px);
+
+    }
+
+
+    .hero-content {
+
+        padding:
+            70px 0;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 58px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
 
     .hero-buttons {
+
         flex-direction: column;
+
     }
 
-    .hero-buttons .button {
+
+    .hero-buttons .btn {
+
         width: 100%;
+
     }
 
-    .hero-image {
-        min-height: 370px;
+
+    .section {
+
+        padding:
+            75px 0;
+
     }
 
-    .yellow-circle {
-        width: 280px;
-        height: 280px;
+
+    .section-header {
+
+        margin-bottom: 35px;
+
     }
 
-    .hero-photo {
-        width: 245px;
-        height: 330px;
+
+    .booking-box {
+
+        padding: 20px;
+
     }
 
-    .hero-info {
-        gap: 18px;
-    }
 
-    .hero-info strong {
-        font-size: 20px;
-    }
+    .booking-step {
 
-    .about-number {
-        width: 145px;
-        height: 145px;
-    }
-
-    .about-number strong {
-        font-size: 35px;
-    }
-
-    .footer-container {
         grid-template-columns: 1fr;
+
+        gap: 10px;
+
     }
 
-    .footer-bottom .container {
+
+    .service-options {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .time-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .arrival-box {
+
+        padding: 30px;
+
         flex-direction: column;
-        gap: 10px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .arrival-icon {
+
+        display: none;
+
+    }
+
+
+    .footer-content {
+
+        padding:
+            25px 0;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
     }
 
 }

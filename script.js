@@ -1,302 +1,190 @@
-javascript
-document.addEventListener("DOMContentLoaded", () => {
+// =================================
+// SERVIÇO
+// =================================
 
-    /* =====================================================
-       MENU MOBILE
-    ===================================================== */
+const serviceButtons =
+    document.querySelectorAll(".service-option");
 
-    const menuToggle = document.getElementById("menuToggle");
-    const nav = document.getElementById("nav");
+serviceButtons.forEach(button => {
 
-    if (menuToggle && nav) {
+    button.addEventListener("click", () => {
 
-        menuToggle.addEventListener("click", () => {
-
-            const isOpen = nav.classList.toggle("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-            menuToggle.classList.toggle(
-                "active",
-                isOpen
-            );
-
+        serviceButtons.forEach(item => {
+            item.classList.remove("active");
         });
 
+        button.classList.add("active");
 
-        // Fecha o menu ao clicar em um link
-        document.querySelectorAll(".nav-link").forEach(link => {
+    });
 
-            link.addEventListener("click", () => {
+});
 
-                nav.classList.remove("open");
 
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+// =================================
+// DATA
+// =================================
 
-                menuToggle.classList.remove("active");
+const dateButtons =
+    document.querySelectorAll(".date-option");
 
-            });
+dateButtons.forEach(button => {
 
+    button.addEventListener("click", () => {
+
+        dateButtons.forEach(item => {
+            item.classList.remove("active");
         });
 
-    }
+        button.classList.add("active");
+
+    });
+
+});
 
 
-    /* =====================================================
-       BUSCA E FILTRO DE SERVIÇOS
-    ===================================================== */
+// =================================
+// HORÁRIO
+// =================================
 
-    const searchInput =
-        document.getElementById("searchInput");
+const timeButtons =
+    document.querySelectorAll(".time-option");
 
-    const categoryFilter =
-        document.getElementById("categoryFilter");
+timeButtons.forEach(button => {
 
-    const serviceCards =
-        document.querySelectorAll(".service-card");
+    button.addEventListener("click", () => {
 
-    const noResults =
-        document.getElementById("noResults");
-
-
-    function filterServices() {
-
-        const search =
-            searchInput.value
-                .toLowerCase()
-                .trim();
-
-        const category =
-            categoryFilter.value;
-
-        let visibleCards = 0;
-
-
-        serviceCards.forEach(card => {
-
-            const name =
-                card.dataset.name
-                    .toLowerCase();
-
-            const cardCategory =
-                card.dataset.category;
-
-
-            const matchesSearch =
-                name.includes(search);
-
-            const matchesCategory =
-                category === "todos" ||
-                cardCategory === category;
-
-
-            if (
-                matchesSearch &&
-                matchesCategory
-            ) {
-
-                card.style.display = "";
-
-                visibleCards++;
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
-
-
-        if (noResults) {
-
-            noResults.style.display =
-                visibleCards === 0
-                    ? "block"
-                    : "none";
-
+        if (
+            button.classList.contains("disabled")
+        ) {
+            return;
         }
 
-    }
-
-
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            filterServices
-        );
-
-    }
-
-
-    if (categoryFilter) {
-
-        categoryFilter.addEventListener(
-            "change",
-            filterServices
-        );
-
-    }
-
-
-    /* =====================================================
-       LINK ATIVO DO MENU
-    ===================================================== */
-
-    const sections =
-        document.querySelectorAll(
-            "section[id], main[id]"
-        );
-
-    const navLinks =
-        document.querySelectorAll(".nav-link");
-
-
-    function updateActiveLink() {
-
-        let currentSection = "";
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 180;
-
-            const sectionBottom =
-                sectionTop + section.offsetHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionBottom
-            ) {
-
-                currentSection =
-                    section.getAttribute("id");
-
-            }
-
+        timeButtons.forEach(item => {
+            item.classList.remove("active");
         });
 
+        button.classList.add("active");
 
-        navLinks.forEach(link => {
+    });
 
-            link.classList.remove("active");
+});
 
-            const href =
-                link.getAttribute("href");
 
-            if (
-                href === `#${currentSection}`
-            ) {
+// =================================
+// TELEFONE
+// =================================
 
-                link.classList.add("active");
+const phoneInput =
+    document.querySelector("#phone");
 
-            }
+phoneInput.addEventListener("input", () => {
 
-        });
+    let value =
+        phoneInput.value.replace(/\D/g, "");
+
+    if (value.length > 11) {
+        value = value.substring(0, 11);
+    }
+
+    if (value.length <= 10) {
+
+        value = value.replace(
+            /^(\d{2})(\d)/,
+            "($1) $2"
+        );
+
+        value = value.replace(
+            /(\d{4})(\d)/,
+            "$1-$2"
+        );
+
+    } else {
+
+        value = value.replace(
+            /^(\d{2})(\d)/,
+            "($1) $2"
+        );
+
+        value = value.replace(
+            /(\d{5})(\d)/,
+            "$1-$2"
+        );
+
+    }
+
+    phoneInput.value = value;
+
+});
+
+
+// =================================
+// CONFIRMAR AGENDAMENTO
+// =================================
+
+const bookingButton =
+    document.querySelector("#bookingButton");
+
+
+bookingButton.addEventListener("click", () => {
+
+    const name =
+        document.querySelector("#name").value.trim();
+
+    const phone =
+        document.querySelector("#phone").value.trim();
+
+    const service =
+        document.querySelector(
+            ".service-option.active"
+        );
+
+    const time =
+        document.querySelector(
+            ".time-option.active"
+        );
+
+
+    if (!name) {
+
+        alert("Digite seu nome.");
+
+        return;
 
     }
 
 
-    window.addEventListener(
-        "scroll",
-        updateActiveLink
+    if (!phone) {
+
+        alert("Digite seu WhatsApp.");
+
+        return;
+
+    }
+
+
+    if (!service) {
+
+        alert("Escolha um serviço.");
+
+        return;
+
+    }
+
+
+    if (!time) {
+
+        alert("Escolha um horário.");
+
+        return;
+
+    }
+
+
+    alert(
+        `Agendamento solicitado!\n\n` +
+        `Cliente: ${name}\n` +
+        `Serviço: ${service.dataset.service}\n` +
+        `Horário: ${time.textContent.trim()}`
     );
-
-
-    /* =====================================================
-       ANIMAÇÃO DOS CARDS
-    ===================================================== */
-
-    const cards =
-        document.querySelectorAll(
-            ".service-card"
-        );
-
-
-    const observer =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
-        );
-
-
-    cards.forEach(card => {
-
-        card.classList.add("animate");
-
-        observer.observe(card);
-
-    });
-
-
-    /* =====================================================
-       SCROLL SUAVE
-    ===================================================== */
-
-    document.querySelectorAll(
-        'a[href^="#"]'
-    ).forEach(link => {
-
-        link.addEventListener(
-            "click",
-            event => {
-
-                const targetId =
-                    link.getAttribute("href");
-
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-                    return;
-                }
-
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
-
-                if (!target) {
-                    return;
-                }
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-        );
-
-    });
 
 });
