@@ -70,6 +70,32 @@ timeButtons.forEach(button => {
 });
 
 
+const heroButtons =
+    document.querySelector(".hero-buttons");
+
+const bookingSection =
+    document.querySelector("#agendamento");
+
+if (heroButtons && bookingSection) {
+
+    const bookingObserver =
+        new IntersectionObserver(
+            ([entry]) => {
+                heroButtons.classList.toggle(
+                    "is-hidden",
+                    entry.isIntersecting
+                );
+            },
+            {
+                threshold: 0.05
+            }
+        );
+
+    bookingObserver.observe(bookingSection);
+
+}
+
+
 // =================================
 // TELEFONE
 // =================================
