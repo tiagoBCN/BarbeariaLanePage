@@ -11,10 +11,14 @@
 
     <meta
         name="description"
-        content="Agende seu horário na nossa barbearia."
+        content="STILLUS MEN: barbearia premium com cortes precisos, cuidado personalizado e estilo marcante."
     >
 
     <title>Barbearia | STILLUS MEN</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -30,21 +34,32 @@
         <div class="container header-content">
 
             <a href="#" class="logo">
-                BARBEARIA | STILLUS MEN
+                BARBEARIA <span>| STILLUS MEN</span>
             </a>
 
-            <nav class="nav">
+            <button
+                class="mobile-menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="mainNav">
 
                 <a href="#servicos">Serviços</a>
 
-                <a href="#agendamento">Agendar</a>
-
                 <a href="#localizacao">Localização</a>
+
+                <a href="#WhatsApp">WhatsApp</a>
 
             </nav>
 
             <a
-                href="#agendamento"
+                href="#link-agendamento"
                 class="btn btn-small"
             >
                 Agendar
@@ -72,32 +87,17 @@
                     </span>
 
                     <h1>
-                        Seu horário.<br>
-                        Seu visual.
+                        Seu Visual.<br>
+                        <span>Sua Presença.</span>
                     </h1>
 
                     <p>
-                        Agende seu horário online ou
-                        venha diretamente para a barbearia.
+                        Visual impecável, atendimento premium e ambiente que valoriza a sua rotina.
                     </p>
 
- 
-        <div class="hero-buttons">
-
-            <a
-                href="#agendamento"
-                class="btn"
-                >
-                Agendar horário
-            </a>
-
-                        <a
-                            href="#servicos"
-                            class="btn btn-outline"
-                        >
-                            Ver serviços
-                        </a>
-
+                    <div class="hero-actions">
+                        <a href="#servicos" class="btn">Conheça os serviços</a>
+                        <a href="#localizacao" class="btn btn-outline">Visite a barbearia</a>
                     </div>
 
                 </div>
@@ -107,128 +107,6 @@
         </section>
 
         
-
-        <!-- =========================
-             LOCALIZAÇÃO
-        ========================== -->
-
-        <section
-            class="section"
-            id="localizacao"
-        >
-
-            <div class="container location-grid">
-
-                <div>
-
-                    <span class="section-label">
-                        ONDE ESTAMOS
-                    </span>
-
-                    <h2>
-                        Venha nos visitar.
-                    </h2>
-
-                    <p>
-                        Rua Exemplo, 123<br>
-                        Centro — Sua Cidade/MG
-                    </p>
-
-                    <a
-                        href="#"
-                        class="btn btn-outline"
-                    >
-                        Ver no mapa
-                    </a>
-
-                </div>
-
-
-                <div class="hero-info">
-
-                    <div class="info-item">
-
-                        <span class="info-icon">✂</span>
-
-                        <div>
-                            <strong>
-                                Atendimento personalizado
-                            </strong>
-
-                            <span>
-                                Um barbeiro, atenção total.
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-item">
-
-                        <span class="info-icon">◷</span>
-
-                        <div>
-                            <strong>
-                                Agendamento online
-                            </strong>
-
-                            <span>
-                                Escolha seu horário sem precisar ligar.
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <div class="hours">
-
-                        <h3>
-                            Horários
-                        </h3>
-
-                        <div class="hours-row">
-
-                            <span>
-                                Segunda — Sexta
-                            </span>
-
-                            <strong>
-                                09:00 — 19:00
-                            </strong>
-
-                        </div>
-
-                        <div class="hours-row">
-
-                            <span>
-                                Sábado
-                            </span>
-
-                            <strong>
-                                09:00 — 17:00
-                            </strong>
-
-                        </div>
-
-                        <div class="hours-row">
-
-                            <span>
-                                Domingo
-                            </span>
-
-                            <strong>
-                                Fechado
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
 
         <!-- =========================
              SERVIÇOS
@@ -241,111 +119,105 @@
 
             <div class="container">
 
-                <div class="section-header">
+                <article class="barber-card" aria-labelledby="barber-card-title">
 
-                    <span class="section-label">
-                        SERVIÇOS
-                    </span>
+                    <div class="barber-card-intro">
 
-                    <h2>
-                        Escolha seu estilo.
-                    </h2>
+                        <span class="section-label">
+                            QUEM CUIDA DO SEU VISUAL
+                        </span>
 
-                    <p>
-                        Serviços rápidos, simples e
-                        feitos do jeito que você gosta.
-                    </p>
-
-                </div>
-
-
-                <div class="services-grid">
-
-                    <article class="service-card">
-
-                        <div class="service-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Corte
-                        </h3>
+                        <h2 id="barber-card-title">
+                            Atendimento com atenção aos detalhes.
+                        </h2>
 
                         <p>
-                            Corte masculino personalizado.
+                            Um atendimento próximo e personalizado, com foco em cortes e barba feitos para combinar com o seu estilo.
                         </p>
 
-                        <div class="service-footer">
+                    </div>
 
-                            <span>
-                                30 min
-                            </span>
+                    <dl class="barber-highlights">
 
-                            <strong>
-                                R$ 30
-                            </strong>
-
+                        <div>
+                            <dt>Especialidades</dt>
+                            <dd>Cortes e barba</dd>
                         </div>
 
-                    </article>
-
-
-                    <article class="service-card">
-
-                        <div class="service-number">
-                            02
+                        <div>
+                            <dt>Atendimento</dt>
+                            <dd>Personalizado</dd>
                         </div>
 
-                        <h3>
-                            Barba
-                        </h3>
+                        <div>
+                            <dt>Compromisso</dt>
+                            <dd>Precisão e cuidado</dd>
+                        </div>
+
+                    </dl>
+
+                </article>
+
+                <div class="services-card">
+
+                    <div class="section-header">
+
+                        <span class="section-label">
+                            SERVIÇOS
+                        </span>
+
+                        <h2>
+                            Estilo que marca presença.
+                        </h2>
 
                         <p>
-                            Acabamento e cuidado completo.
+                            Serviços pensados para valorizar o seu visual com precisão e personalidade.
                         </p>
 
-                        <div class="service-footer">
-
-                            <span>
-                                20 min
-                            </span>
-
-                            <strong>
-                                R$ 20
-                            </strong>
-
-                        </div>
-
-                    </article>
+                    </div>
 
 
-                    <article class="service-card">
+                    <div
+                        class="services-grid"
+                        id="servicesCarousel"
+                        role="region"
+                        aria-label="Carrossel de serviços"
+                        tabindex="0"
+                    >
 
-                        <div class="service-number">
-                            03
-                        </div>
+                        <article class="service-card">
+                            <img
+                                src="assets/Captura%20de%20tela_2026-10-04_00-28-17.png"
+                                alt="Resultado de corte clássico na Barbearia Stillus Men"
+                            >
+                        </article>
 
-                        <h3>
-                            Corte + Barba
-                        </h3>
 
-                        <p>
-                            O combo completo.
-                        </p>
+                        <article class="service-card">
+                            <img
+                                src="assets/Captura%20de%20tela_2026-10-04_00-30-12.png"
+                                alt="Barbeiro realizando um corte infantil na cadeira da barbearia"
+                            >
+                        </article>
 
-                        <div class="service-footer">
 
-                            <span>
-                                50 min
-                            </span>
+                        <article class="service-card">
+                            <img
+                                src="assets/Captura%20de%20tela_2026-10-04_00-31-50.png"
+                                alt="Barbeiro ajustando o corte de cabelo de um cliente"
+                            >
+                        </article>
 
-                            <strong>
-                                R$ 45
-                            </strong>
+                    </div>
 
-                        </div>
-
-                    </article>
+                    <div class="services-carousel-controls" role="group" aria-label="Navegação dos serviços">
+                        <button class="carousel-button" type="button" aria-label="Serviço anterior" aria-controls="servicesCarousel" data-carousel-direction="-1" disabled>
+                            <span aria-hidden="true">←</span>
+                        </button>
+                        <button class="carousel-button" type="button" aria-label="Próximo serviço" aria-controls="servicesCarousel" data-carousel-direction="1">
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
 
                 </div>
 
@@ -355,286 +227,103 @@
 
 
         <!-- =========================
-             AGENDAMENTO
+             LOCALIZAÇÃO
         ========================== -->
 
         <section
-            class="section booking-section"
-            id="agendamento"
+            class="section"
+            id="localizacao"
         >
 
             <div class="container">
 
-                <div class="section-header">
+                <div class="location-card">
 
-                    <span class="section-label">
-                        AGENDAMENTO
-                    </span>
+                    <div class="location-grid">
 
-                    <h2>
-                        Escolha seu horário.
-                    </h2>
+                        <div>
 
-                    <p>
-                        Reserve seu horário em poucos segundos.
-                    </p>
+                            <span class="section-label">
+                                ONDE ESTAMOS
+                            </span>
 
-                </div>
+                            <h2>
+                                Venha nos visitar.
+                            </h2>
 
+                            <p>
+                                Rua Exemplo, 123<br>
+                                Centro — Sua Cidade/MG
+                            </p>
 
-                <div class="booking-box">
-
-                    <!-- SERVIÇO -->
-
-                    <div class="booking-step">
-
-                        <span class="step-number">
-                            01
-                        </span>
-
-                        <div class="step-content">
-
-                            <h3>
-                                Escolha o serviço
-                            </h3>
-
-                            <div class="service-options">
-
-                                <button
-                                    class="service-option active"
-                                    data-service="Corte"
-                                >
-                                    <span>
-                                        Corte
-                                    </span>
-
-                                    <strong>
-                                        R$ 30
-                                    </strong>
-                                </button>
-
-
-                                <button
-                                    class="service-option"
-                                    data-service="Barba"
-                                >
-                                    <span>
-                                        Barba
-                                    </span>
-
-                                    <strong>
-                                        R$ 20
-                                    </strong>
-                                </button>
-
-
-                                <button
-                                    class="service-option"
-                                    data-service="Corte + Barba"
-                                >
-                                    <span>
-                                        Corte + Barba
-                                    </span>
-
-                                    <strong>
-                                        R$ 45
-                                    </strong>
-                                </button>
-
-                            </div>
+                            <a
+                                href="#"
+                                class="btn btn-outline"
+                            >
+                                Ver no mapa
+                            </a>
 
                         </div>
 
-                    </div>
 
+                        <div class="hero-info">
 
-                    <!-- DATA -->
+                            <div class="info-item">
 
-                    <div class="booking-step">
+                                <span class="info-icon">✂</span>
 
-                        <span class="step-number">
-                            02
-                        </span>
-
-                        <div class="step-content">
-
-                            <h3>
-                                Escolha o dia
-                            </h3>
-
-                            <div class="date-options">
-
-                                <button class="date-option active">
-
-                                    <span>
-                                        HOJE
-                                    </span>
-
+                                <div>
                                     <strong>
-                                        22
+                                        Atendimento personalizado
                                     </strong>
 
-                                </button>
-
-
-                                <button class="date-option">
-
                                     <span>
-                                        TER
+                                        Um barbeiro, atenção total.
                                     </span>
-
-                                    <strong>
-                                        23
-                                    </strong>
-
-                                </button>
-
-
-                                <button class="date-option">
-
-                                    <span>
-                                        QUA
-                                    </span>
-
-                                    <strong>
-                                        24
-                                    </strong>
-
-                                </button>
-
-
-                                <button class="date-option">
-
-                                    <span>
-                                        QUI
-                                    </span>
-
-                                    <strong>
-                                        25
-                                    </strong>
-
-                                </button>
+                                </div>
 
                             </div>
 
-                        </div>
 
-                    </div>
+                            <div class="hours">
 
+                                <h3>
+                                    Horários
+                                </h3>
 
-                    <!-- HORÁRIO -->
+                                <div class="hours-row">
 
-                    <div class="booking-step">
+                                    <span>
+                                        Segunda — Sexta
+                                    </span>
 
-                        <span class="step-number">
-                            03
-                        </span>
-
-                        <div class="step-content">
-
-                            <h3>
-                                Escolha o horário
-                            </h3>
-
-                            <div class="time-grid">
-
-                                <button class="time-option">
-                                    09:00
-                                </button>
-
-                                <button class="time-option">
-                                    09:30
-                                </button>
-
-                                <button class="time-option disabled">
-                                    10:00
-                                </button>
-
-                                <button class="time-option">
-                                    10:30
-                                </button>
-
-                                <button class="time-option">
-                                    11:00
-                                </button>
-
-                                <button class="time-option">
-                                    11:30
-                                </button>
-
-                                <button class="time-option">
-                                    14:00
-                                </button>
-
-                                <button class="time-option">
-                                    14:30
-                                </button>
-
-                                <button class="time-option">
-                                    15:00
-                                </button>
-
-                                <button class="time-option">
-                                    15:30
-                                </button>
-
-                                <button class="time-option">
-                                    16:00
-                                </button>
-
-                                <button class="time-option">
-                                    16:30
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- DADOS -->
-
-                    <div class="booking-step">
-
-                        <span class="step-number">
-                            04
-                        </span>
-
-                        <div class="step-content">
-
-                            <h3>
-                                Seus dados
-                            </h3>
-
-                            <div class="form-grid">
-
-                                <div class="input-group">
-
-                                    <label for="name">
-                                        Nome
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        placeholder="Seu nome"
-                                    >
+                                    <strong>
+                                        09:00 — 19:00
+                                    </strong>
 
                                 </div>
 
+                                <div class="hours-row">
 
-                                <div class="input-group">
+                                    <span>
+                                        Sábado
+                                    </span>
 
-                                    <label for="phone">
-                                        WhatsApp
-                                    </label>
+                                    <strong>
+                                        09:00 — 17:00
+                                    </strong>
 
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        placeholder="(00) 00000-0000"
-                                    >
+                                </div>
+
+                                <div class="hours-row">
+
+                                    <span>
+                                        Domingo
+                                    </span>
+
+                                    <strong>
+                                        Fechado
+                                    </strong>
 
                                 </div>
 
@@ -643,14 +332,6 @@
                         </div>
 
                     </div>
-
-
-                    <button
-                        class="btn booking-button"
-                        id="bookingButton"
-                    >
-                        Confirmar agendamento
-                    </button>
 
                 </div>
 
@@ -670,11 +351,11 @@
         <div class="container footer-content">
 
             <strong>
-                
+                BARBEARIA <span>| STILLUS MEN</span>
             </strong>
 
             <span>
-                © 2026 — Todos os direitos reservados.
+                STILLUS MEN © 2026 — Todos os direitos reservados.
             </span>
 
         </div>

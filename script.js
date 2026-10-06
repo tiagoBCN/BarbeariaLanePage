@@ -1,216 +1,100 @@
 // =================================
-// SERVIÇO
+// HERO / INTERAÇÃO BÁSICA
 // =================================
-
-const serviceButtons =
-    document.querySelectorAll(".service-option");
-
-serviceButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        serviceButtons.forEach(item => {
-            item.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-    });
-
-});
-
-
-// =================================
-// DATA
-// =================================
-
-const dateButtons =
-    document.querySelectorAll(".date-option");
-
-dateButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        dateButtons.forEach(item => {
-            item.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-    });
-
-});
-
-
-// =================================
-// HORÁRIO
-// =================================
-
-const timeButtons =
-    document.querySelectorAll(".time-option");
-
-timeButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        if (
-            button.classList.contains("disabled")
-        ) {
-            return;
-        }
-
-        timeButtons.forEach(item => {
-            item.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-    });
-
-});
-
 
 const heroButtons =
     document.querySelector(".hero-buttons");
 
-const bookingSection =
-    document.querySelector("#agendamento");
+if (heroButtons) {
+    heroButtons.classList.remove("is-hidden");
+}
 
-if (heroButtons && bookingSection) {
 
-    const bookingObserver =
-        new IntersectionObserver(
-            ([entry]) => {
-                heroButtons.classList.toggle(
-                    "is-hidden",
-                    entry.isIntersecting
-                );
-            },
-            {
-                threshold: 0.05
-            }
-        );
+// =================================
+// MENU MOBILE
+// =================================
 
-    bookingObserver.observe(bookingSection);
+const mobileMenuToggle =
+    document.querySelector(".mobile-menu-toggle");
+
+const mainNav =
+    document.querySelector("#mainNav");
+
+if (mobileMenuToggle && mainNav) {
+
+    const closeMenu = () => {
+        mainNav.classList.remove("is-open");
+        mobileMenuToggle.classList.remove("is-active");
+        mobileMenuToggle.setAttribute("aria-expanded", "false");
+    };
+
+    const toggleMenu = () => {
+        const isOpen = mainNav.classList.toggle("is-open");
+        mobileMenuToggle.classList.toggle("is-active", isOpen);
+        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    mobileMenuToggle.addEventListener("click", toggleMenu);
+
+    mainNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", event => {
+        const clickedInsideMenu =
+            mainNav.contains(event.target) ||
+            mobileMenuToggle.contains(event.target);
+
+        if (!clickedInsideMenu) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 600) {
+            closeMenu();
+        }
+    });
 
 }
 
 
 // =================================
-// TELEFONE
+// CARROSSEL DE SERVIÇOS
 // =================================
 
-const phoneInput =
-    document.querySelector("#phone");
+const servicesCarousel =
+    document.querySelector("#servicesCarousel");
 
-phoneInput.addEventListener("input", () => {
+if (servicesCarousel) {
+    const carouselButtons =
+        document.querySelectorAll("[data-carousel-direction]");
 
-    let value =
-        phoneInput.value.replace(/\D/g, "");
+    const updateCarouselButtons = () => {
+        const maxScroll = servicesCarousel.scrollWidth - servicesCarousel.clientWidth;
 
-    if (value.length > 11) {
-        value = value.substring(0, 11);
-    }
+        carouselButtons.forEach(button => {
+            const direction = Number(button.dataset.carouselDirection);
+            button.disabled = direction < 0
+                ? servicesCarousel.scrollLeft <= 1
+                : servicesCarousel.scrollLeft >= maxScroll - 1;
+        });
+    };
 
-    if (value.length <= 10) {
+    carouselButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const firstCard = servicesCarousel.querySelector(".service-card");
+            const gap = Number.parseFloat(getComputedStyle(servicesCarousel).gap) || 0;
+            const direction = Number(button.dataset.carouselDirection);
 
-        value = value.replace(
-            /^(\d{2})(\d)/,
-            "($1) $2"
-        );
+            servicesCarousel.scrollBy({
+                left: direction * (firstCard.getBoundingClientRect().width + gap),
+                behavior: "smooth"
+            });
+        });
+    });
 
-        value = value.replace(
-            /(\d{4})(\d)/,
-            "$1-$2"
-        );
-
-    } else {
-
-        value = value.replace(
-            /^(\d{2})(\d)/,
-            "($1) $2"
-        );
-
-        value = value.replace(
-            /(\d{5})(\d)/,
-            "$1-$2"
-        );
-
-    }
-
-    phoneInput.value = value;
-
-});
-
-
-// =================================
-// CONFIRMAR AGENDAMENTO
-// =================================
-
-const bookingButton =
-    document.querySelector("#bookingButton");
-
-
-bookingButton.addEventListener("click", () => {
-
-    const name =
-        document.querySelector("#name").value.trim();
-
-    const phone =
-        document.querySelector("#phone").value.trim();
-
-    const service =
-        document.querySelector(
-            ".service-option.active"
-        );
-
-    const time =
-        document.querySelector(
-            ".time-option.active"
-        );
-
-
-    if (!name) {
-
-        alert("Digite seu nome.");
-
-        return;
-
-    }
-
-
-    if (!phone) {
-
-        alert("Digite seu WhatsApp.");
-
-        return;
-
-    }
-
-
-    if (!service) {
-
-        alert("Escolha um serviço.");
-
-        return;
-
-    }
-
-
-    if (!time) {
-
-        alert("Escolha um horário.");
-
-        return;
-
-    }
-
-
-    alert(
-        `Agendamento solicitado!\n\n` +
-        `Cliente: ${name}\n` +
-        `Serviço: ${service.dataset.service}\n` +
-        `Horário: ${time.textContent.trim()}`
-    );
-
-});
+    servicesCarousel.addEventListener("scroll", updateCarouselButtons, { passive: true });
+    window.addEventListener("resize", updateCarouselButtons);
+    updateCarouselButtons();
+}
