@@ -1,370 +1,217 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="STILLUS MEN: barbearia premium com cortes precisos, cuidado personalizado e estilo marcante."
-    >
-
-    <title>Barbearia | STILLUS MEN</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="STILLUS MEN: barbearia premium em Sua Cidade/MG. Cortes precisos, barba perfeita e atendimento personalizado.">
+<title>Barbearia | STILLUS MEN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+<header class="header" id="header">
+  <div class="container header-content">
+    <a href="#" class="logo" id="logo-link">STILLUS <span>MEN</span></a>
+    <button class="mobile-menu-toggle" type="button" id="mobileMenuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="mainNav" role="navigation" aria-label="Menu principal">
+      <a href="#sobre" id="nav-sobre">O Barbeiro</a>
+      <a href="#servicos" id="nav-servicos">Servicos</a>
+      <a href="#galeria" id="nav-galeria">Galeria</a>
+      <a href="#localizacao" id="nav-localizacao">Localizacao</a>
+    </nav>
+    <a href="#link-agendamento" class="btn btn-small" id="header-cta">Agendar</a>
+  </div>
+</header>
 
-    <header class="header">
+<main>
 
-        <div class="container header-content">
-
-            <a href="#" class="logo">
-                BARBEARIA <span>| STILLUS MEN</span>
-            </a>
-
-            <button
-                class="mobile-menu-toggle"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav class="nav" id="mainNav">
-
-                <a href="#servicos">Serviços</a>
-
-                <a href="#localizacao">Localização</a>
-
-                <a href="#WhatsApp">WhatsApp</a>
-
-            </nav>
-
-            <a
-                href="#link-agendamento"
-                class="btn btn-small"
-            >
-                Agendar
-            </a>
-
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="510474562_18351359491158931_2968044530834932666_n.jpg" alt="Barbeiro da STILLUS MEN" class="hero-bg-img" id="heroBgImg" fetchpriority="high">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-text" data-animate="fade-up">
+        <span class="hero-badge" id="hero-badge"><span class="badge-dot"></span>Atendimento personalizado</span>
+        <h1 id="hero-heading">Seu Visual.<br><span class="gold-gradient">Sua Presenca.</span></h1>
+        <p id="hero-desc">Visual impecavel, atendimento premium e ambiente que valoriza a sua rotina.</p>
+        <div class="hero-actions">
+          <a href="#link-agendamento" class="btn btn-gold" id="hero-cta-primary">
+            <span>Agendar agora</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#servicos" class="btn btn-ghost" id="hero-cta-secondary">Ver servicos</a>
         </div>
+      </div>
+      <div class="hero-stats" data-animate="fade-up" data-delay="200">
+        <div class="stat-item"><strong class="stat-number" id="stat-anos">+5</strong><span class="stat-label">Anos de experiencia</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><strong class="stat-number" id="stat-clientes">500+</strong><span class="stat-label">Clientes satisfeitos</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><strong class="stat-number" id="stat-nota">5.0</strong><span class="stat-label">Avaliacao media</span></div>
+      </div>
+    </div>
+    <a href="#sobre" class="hero-scroll-hint" id="scrollHint"><span class="scroll-line"></span><span class="scroll-text">Scroll</span></a>
+  </section>
 
-    </header>
-
-
-    <main>
-
-        <!-- =========================
-             HERO
-        ========================== -->
-
-        <section class="hero">
-
-            <div class="container hero-content">
-
-                <div class="hero-text">
-
-                    <span class="hero-tag">
-                        Aqui você garante
-                    </span>
-
-                    <h1>
-                        Seu Visual.<br>
-                        <span>Sua Presença.</span>
-                    </h1>
-
-                    <p>
-                        Visual impecável, atendimento premium e ambiente que valoriza a sua rotina.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="#servicos" class="btn">Conheça os serviços</a>
-                        <a href="#localizacao" class="btn btn-outline">Visite a barbearia</a>
-                    </div>
-
-                </div>
-
+  <!-- SOBRE -->
+  <section class="section section-sobre" id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-image-col" data-animate="fade-right">
+          <div class="sobre-image-wrap">
+            <img src="510474562_18351359491158931_2968044530834932666_n.jpg" alt="Barbeiro da STILLUS MEN" class="sobre-img" id="sobre-img" loading="lazy">
+            <div class="sobre-badge-card">
+              <span class="badge-icon">&#9986;</span>
+              <div><strong>Especialista</strong><span>Cortes masculinos</span></div>
             </div>
-
-        </section>
-
-        
-
-        <!-- =========================
-             SERVIÇOS
-        ========================== -->
-
-        <section
-            class="section"
-            id="servicos"
-        >
-
-            <div class="container">
-
-                <article class="barber-card" aria-labelledby="barber-card-title">
-
-                    <div class="barber-card-intro">
-
-                        <span class="section-label">
-                            QUEM CUIDA DO SEU VISUAL
-                        </span>
-
-                        <h2 id="barber-card-title">
-                            Atendimento com atenção aos detalhes.
-                        </h2>
-
-                        <p>
-                            Um atendimento próximo e personalizado, com foco em cortes e barba feitos para combinar com o seu estilo.
-                        </p>
-
-                    </div>
-
-                    <dl class="barber-highlights">
-
-                        <div>
-                            <dt>Especialidades</dt>
-                            <dd>Cortes e barba</dd>
-                        </div>
-
-                        <div>
-                            <dt>Atendimento</dt>
-                            <dd>Personalizado</dd>
-                        </div>
-
-                        <div>
-                            <dt>Compromisso</dt>
-                            <dd>Precisão e cuidado</dd>
-                        </div>
-
-                    </dl>
-
-                </article>
-
-                <div class="services-card">
-
-                    <div class="section-header">
-
-                        <span class="section-label">
-                            SERVIÇOS
-                        </span>
-
-                        <h2>
-                            Estilo que marca presença.
-                        </h2>
-
-                        <p>
-                            Serviços pensados para valorizar o seu visual com precisão e personalidade.
-                        </p>
-
-                    </div>
-
-
-                    <div
-                        class="services-grid"
-                        id="servicesCarousel"
-                        role="region"
-                        aria-label="Carrossel de serviços"
-                        tabindex="0"
-                    >
-
-                        <article class="service-card">
-                            <img
-                                src="assets/Captura%20de%20tela_2026-10-04_00-28-17.png"
-                                alt="Resultado de corte clássico na Barbearia Stillus Men"
-                            >
-                        </article>
-
-
-                        <article class="service-card">
-                            <img
-                                src="assets/Captura%20de%20tela_2026-10-04_00-30-12.png"
-                                alt="Barbeiro realizando um corte infantil na cadeira da barbearia"
-                            >
-                        </article>
-
-
-                        <article class="service-card">
-                            <img
-                                src="assets/Captura%20de%20tela_2026-10-04_00-31-50.png"
-                                alt="Barbeiro ajustando o corte de cabelo de um cliente"
-                            >
-                        </article>
-
-                    </div>
-
-                    <div class="services-carousel-controls" role="group" aria-label="Navegação dos serviços">
-                        <button class="carousel-button" type="button" aria-label="Serviço anterior" aria-controls="servicesCarousel" data-carousel-direction="-1" disabled>
-                            <span aria-hidden="true">←</span>
-                        </button>
-                        <button class="carousel-button" type="button" aria-label="Próximo serviço" aria-controls="servicesCarousel" data-carousel-direction="1">
-                            <span aria-hidden="true">→</span>
-                        </button>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             LOCALIZAÇÃO
-        ========================== -->
-
-        <section
-            class="section"
-            id="localizacao"
-        >
-
-            <div class="container">
-
-                <div class="location-card">
-
-                    <div class="location-grid">
-
-                        <div>
-
-                            <span class="section-label">
-                                ONDE ESTAMOS
-                            </span>
-
-                            <h2>
-                                Venha nos visitar.
-                            </h2>
-
-                            <p>
-                                Rua Exemplo, 123<br>
-                                Centro — Sua Cidade/MG
-                            </p>
-
-                            <a
-                                href="#"
-                                class="btn btn-outline"
-                            >
-                                Ver no mapa
-                            </a>
-
-                        </div>
-
-
-                        <div class="hero-info">
-
-                            <div class="info-item">
-
-                                <span class="info-icon">✂</span>
-
-                                <div>
-                                    <strong>
-                                        Atendimento personalizado
-                                    </strong>
-
-                                    <span>
-                                        Um barbeiro, atenção total.
-                                    </span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="hours">
-
-                                <h3>
-                                    Horários
-                                </h3>
-
-                                <div class="hours-row">
-
-                                    <span>
-                                        Segunda — Sexta
-                                    </span>
-
-                                    <strong>
-                                        09:00 — 19:00
-                                    </strong>
-
-                                </div>
-
-                                <div class="hours-row">
-
-                                    <span>
-                                        Sábado
-                                    </span>
-
-                                    <strong>
-                                        09:00 — 17:00
-                                    </strong>
-
-                                </div>
-
-                                <div class="hours-row">
-
-                                    <span>
-                                        Domingo
-                                    </span>
-
-                                    <strong>
-                                        Fechado
-                                    </strong>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="footer">
-
-        <div class="container footer-content">
-
-            <strong>
-                BARBEARIA <span>| STILLUS MEN</span>
-            </strong>
-
-            <span>
-                STILLUS MEN © 2026 — Todos os direitos reservados.
-            </span>
-
+          </div>
         </div>
+        <div class="sobre-text-col" data-animate="fade-left">
+          <span class="section-label">QUEM CUIDA DO SEU VISUAL</span>
+          <h2 id="sobre-title">Atendimento com<br><span class="gold-text">atencao aos detalhes.</span></h2>
+          <p>Um atendimento proximo e personalizado, com foco em cortes e barba feitos para combinar com o seu estilo. Cada detalhe importa.</p>
+          <dl class="sobre-highlights">
+            <div class="highlight-item"><dt><span class="highlight-icon">&#10022;</span>Especialidades</dt><dd>Cortes classicos e modernos, barba</dd></div>
+            <div class="highlight-item"><dt><span class="highlight-icon">&#10022;</span>Atendimento</dt><dd>Personalizado e sem pressa</dd></div>
+            <div class="highlight-item"><dt><span class="highlight-icon">&#10022;</span>Compromisso</dt><dd>Precisao e cuidado em cada corte</dd></div>
+          </dl>
+          <a href="#link-agendamento" class="btn btn-gold" id="sobre-cta">Agendar meu horario</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </footer>
+  <!-- SERVICOS -->
+  <section class="section section-servicos" id="servicos">
+    <div class="container">
+      <div class="section-header centered" data-animate="fade-up">
+        <span class="section-label">SERVICOS</span>
+        <h2 id="servicos-title">Estilo que marca<br><span class="gold-text">presenca.</span></h2>
+        <p>Servicos pensados para valorizar o seu visual com precisao e personalidade.</p>
+      </div>
+      <div class="pricing-grid" data-animate="fade-up" data-delay="100">
+        <article class="pricing-card" id="service-corte">
+          <div class="pricing-icon">&#9986;</div>
+          <div class="pricing-body"><h3>Corte</h3><p>Corte classico ou moderno, acabamento perfeito com tesoura ou maquina.</p></div>
+        </article>
+        <article class="pricing-card" id="service-corte-barba">
+          <div class="pricing-icon">&#9889;</div>
+          <div class="pricing-body"><h3>Corte + Barba</h3><p>O combo completo: corte personalizado e modelagem de barba com acabamento de navalha.</p></div>
+        </article>
+        <article class="pricing-card" id="service-barba">
+          <div class="pricing-icon">&#9672;</div>
+          <div class="pricing-body"><h3>Barba</h3><p>Modelagem, hidratacao e acabamento preciso para um visual impecavel.</p></div>
+        </article>
+        <article class="pricing-card" id="service-infantil">
+          <div class="pricing-icon">&#9733;</div>
+          <div class="pricing-body"><h3>Corte Infantil</h3><p>Atendimento especial para os pequenos, com paciencia e cuidado.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section section-galeria" id="galeria">
+    <div class="container">
+      <div class="section-header centered" data-animate="fade-up">
+        <span class="section-label">GALERIA</span>
+        <h2 id="galeria-title">Resultados que<br><span class="gold-text">falam por si.</span></h2>
+      </div>
+      <div class="services-grid" id="servicesCarousel" role="region" aria-label="Galeria de trabalhos" tabindex="0" data-animate="fade-up" data-delay="100">
+        <article class="service-card">
+          <img src="assets/Captura%20de%20tela_2026-10-04_00-28-17.png" alt="Resultado de corte classico na Barbearia Stillus Men" loading="lazy">
+          <div class="service-card-overlay"><span>Corte Classico</span></div>
+        </article>
+        <article class="service-card">
+          <img src="assets/Captura%20de%20tela_2026-10-04_00-30-12.png" alt="Barbeiro realizando um corte infantil" loading="lazy">
+          <div class="service-card-overlay"><span>Corte Infantil</span></div>
+        </article>
+        <article class="service-card">
+          <img src="assets/Captura%20de%20tela_2026-10-04_00-31-50.png" alt="Barbeiro ajustando o corte de cabelo" loading="lazy">
+          <div class="service-card-overlay"><span>Corte Moderno</span></div>
+        </article>
+      </div>
+      <div class="services-carousel-controls" role="group">
+        <button class="carousel-button" type="button" id="carousel-prev" aria-label="Imagem anterior" aria-controls="servicesCarousel" data-carousel-direction="-1" disabled>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-button" type="button" id="carousel-next" aria-label="Proxima imagem" aria-controls="servicesCarousel" data-carousel-direction="1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="section-cta-strip" id="link-agendamento">
+    <div class="container">
+      <div class="cta-strip" data-animate="fade-up">
+        <div class="cta-strip-text">
+          <span class="section-label">PRONTO PARA O UPGRADE?</span>
+          <h2>Reserve seu horario <span class="gold-text">agora.</span></h2>
+          <p>Atendimento personalizado, sem fila, no seu tempo.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="https://wa.me/5500000000000" class="btn btn-gold btn-large" id="whatsapp-cta" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <script src="script.js"></script>
 
+  <!-- LOCALIZACAO -->
+  <section class="section section-localizacao" id="localizacao">
+    <div class="container">
+      <div class="location-card" data-animate="fade-up">
+        <div class="location-grid">
+          <div class="location-info">
+            <span class="section-label">ONDE ESTAMOS</span>
+            <h2 id="localizacao-title">Venha nos<br><span class="gold-text">visitar.</span></h2>
+            <address class="location-address">Rua Exemplo, 123<br>Centro - Sua Cidade/MG</address>
+            <a href="#" class="btn btn-outline" id="mapa-cta">Ver no mapa</a>
+          </div>
+          <div class="location-details">
+            <div class="info-item" id="info-atendimento">
+              <span class="info-icon">&#9986;</span>
+              <div><strong>Atendimento personalizado</strong><span>Um barbeiro, atencao total ao seu visual.</span></div>
+            </div>
+            <div class="hours" id="horarios-section">
+              <h3>Horarios</h3>
+              <div class="hours-row"><span>Segunda - Sexta</span><strong>09:00 - 19:00</strong></div>
+              <div class="hours-row"><span>Sabado</span><strong>09:00 - 17:00</strong></div>
+              <div class="hours-row"><span>Domingo</span><strong class="closed">Fechado</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container footer-content">
+    <strong class="footer-logo">STILLUS <span>MEN</span></strong>
+    <nav class="footer-nav" aria-label="Links do rodape">
+      <a href="#sobre">O Barbeiro</a>
+      <a href="#servicos">Servicos</a>
+      <a href="#localizacao">Localizacao</a>
+    </nav>
+    <span class="footer-copy">STILLUS MEN &copy; 2026 - Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
-
 </html>
